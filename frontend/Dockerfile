@@ -17,7 +17,7 @@ RUN npm run build
 FROM nginx:1.27.0
 # 빌드된 파일을 Nginx HTML 디렉토리로 복사
 COPY --from=build /app/build /usr/share/nginx/html
-# 80번 포트 노출
+# 3000번 포트 노출
 EXPOSE 3000
 # Nginx 실행
 CMD ["nginx", "-g", "daemon off;"]
